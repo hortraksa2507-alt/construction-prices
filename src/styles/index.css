@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Battambang:wght@300;400;700;900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root[data-theme="light"],
+:root {
+  --bg: #f3ede4;
+  --bg2: #eae3d8;
+  --card: #fffdf9;
+  --card-h: #fdfcfa;
+  --bdr: #ddd5c8;
+  --acc: #c4613d;
+  --acc-d: #a8502f;
+  --acc-l: #da7756;
+  --txt: #2d2018;
+  --dim: #9b8e80;
+  --red: #c0392b;
+  --grn: #4e8a5e;
+  --blu: #4a7a9e;
+  --shadow: rgba(40, 30, 20, 0.08);
+  --sidebar-bg: #ffffff;
+  --modal-bg: rgba(45, 32, 24, 0.45);
+  --input-bg: #fffbf8;
+}
+
+:root[data-theme="dark"] {
+  --bg: #1a1510;
+  --bg2: #24201a;
+  --card: #2a241d;
+  --card-h: #302920;
+  --bdr: #3d362c;
+  --acc: #da7756;
+  --acc-d: #e8896a;
+  --acc-l: #c4613d;
+  --txt: #e8e0d6;
+  --dim: #8a7d6f;
+  --red: #e74c3c;
+  --grn: #6aad7a;
+  --blu: #6a9abe;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --sidebar-bg: #221d17;
+  --modal-bg: rgba(10, 8, 5, 0.7);
+  --input-bg: #2a241d;
+}
+
+body {
+  background: var(--bg);
+  font-family: "Battambang", sans-serif;
+  color: var(--txt);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bdr);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dim);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.25s ease-out;
+}

@@ -1,0 +1,256 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.product-card {
+  background: var(--card);
+  border: 1px solid var(--bdr);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  animation: fadeIn 0.3s ease-out;
+  animation-fill-mode: both;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--shadow);
+  border-color: var(--acc-l);
+}
+
+.card-image {
+  position: relative;
+  height: 140px;
+  background: var(--bg2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.2s;
+}
+
+.card-image:hover {
+  background: var(--bg);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-image .placeholder {
+  font-size: 2.5rem;
+  opacity: 0.5;
+  transition: transform 0.3s;
+}
+
+.card-image:hover .placeholder {
+  transform: scale(1.1);
+}
+
+.card-image .upload-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(196, 97, 61, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #fff;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.card-image:hover .upload-overlay {
+  opacity: 1;
+}
+
+.card-image .upload-overlay span:first-child {
+  font-size: 1.4rem;
+}
+
+.remove-image-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(192, 57, 43, 0.9);
+  color: #fff;
+  font-size: 0.7rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.card-image:hover .remove-image-btn {
+  opacity: 1;
+}
+
+.card-body {
+  padding: 14px;
+}
+
+.card-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  color: var(--dim);
+  background: var(--bg2);
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.card-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--txt);
+  margin-bottom: 8px;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: color 0.2s;
+  word-break: break-word;
+}
+
+.card-name:hover {
+  color: var(--acc);
+}
+
+.card-prices {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.price-tag {
+  background: rgba(196, 97, 61, 0.07);
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  color: var(--acc-d);
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 1px solid rgba(196, 97, 61, 0.18);
+  transition: all 0.2s;
+}
+
+.price-tag:hover {
+  background: rgba(196, 97, 61, 0.15);
+}
+
+.price-tag.empty {
+  color: var(--dim);
+  font-weight: 400;
+  font-size: 0.75rem;
+  border-style: dashed;
+  background: transparent;
+}
+
+.card-actions {
+  display: flex;
+  gap: 5px;
+  padding-top: 8px;
+  border-top: 1px solid var(--bdr);
+}
+
+.card-actions button {
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--bdr);
+  background: transparent;
+  color: var(--dim);
+  font-family: inherit;
+  font-size: 0.68rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.card-actions button:hover {
+  border-color: var(--acc);
+  color: var(--acc);
+  background: rgba(196, 97, 61, 0.05);
+}
+
+.card-actions .delete-btn:hover {
+  border-color: var(--red);
+  color: var(--red);
+  background: rgba(192, 57, 43, 0.05);
+}
+
+/* Edit inline */
+.edit-input {
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 2px solid var(--acc);
+  background: var(--input-bg);
+  color: var(--acc-d);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  width: 100%;
+  outline: none;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.edit-actions button {
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: none;
+  font-family: inherit;
+  font-size: 0.7rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.edit-actions .save-btn {
+  background: var(--grn);
+  color: #fff;
+}
+
+.edit-actions .cancel-btn {
+  background: var(--bdr);
+  color: var(--txt);
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--dim);
+  animation: fadeIn 0.4s ease-out;
+}
+
+.empty-state .icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.empty-state p {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
