@@ -99,3 +99,16 @@ body {
 .animate-scale-in {
   animation: scaleIn 0.25s ease-out;
 }
+
+/* Telegram Mini App adjustments */
+body.telegram-webapp {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+body.telegram-webapp .header {
+  padding-top: env(safe-area-inset-top, 12px);
+}
+
+body.telegram-webapp .sidebar {
+  padding-top: calc(env(safe-area-inset-top, 0px) + 55px);
+}
